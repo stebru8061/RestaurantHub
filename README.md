@@ -55,7 +55,9 @@ Customers can view the menu and make reservations, while staff members can manag
 1. Install dependencies:
    ```bash
    npm install
-
+2. How to run:
+   ```bash
+   npm run dev
 ---
 ### Project Summary 
 This project demonstrates the development of a full-stack web application with a focus on functionality, security, and usability. It includes database integration, user authentication, role-based access control, and full CRUD operations. Security measures such as password hashing, input validation, and protected routes were implemented to ensure safe data handling.
