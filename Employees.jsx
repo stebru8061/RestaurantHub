@@ -1,3 +1,16 @@
+// EmployeesPage.jsx
+// Displays employee information for restaurant management.
+//
+// Purpose:
+// - Allows managers to view employee details
+// - Organizes staff data such as roles, contact info, and schedules
+// - Demonstrates mapping over data to dynamically render UI components
+//
+// Key Concepts:
+// - Static data structure for employees
+// - Array mapping to generate UI cards
+// - Reusable Layout component for consistent page design
+
 import Layout from "../components/Layout";
 
 function EmployeesPage() {
