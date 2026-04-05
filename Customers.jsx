@@ -1,3 +1,16 @@
+// CustomersPage.jsx
+// Displays customer reservation data with search functionality.
+//
+// Purpose:
+// - Allows staff to view customer records
+// - Provides a search feature across multiple fields
+// - Demonstrates filtering and state management in React
+//
+// Key Concepts:
+// - useState for managing search input
+// - useMemo for efficient filtering
+// - Dynamic rendering of customer data
+
 import { useMemo, useState } from "react";
 import Layout from "../components/Layout";
 
