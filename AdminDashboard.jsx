@@ -1,6 +1,18 @@
 // AdminDashboard.jsx
 // This page includes full CRUD functionality and wildcard search.
 // Users can add, edit, delete, and search customer records on the same page.
+// Admin dashboard for RestaurantHub.
+//
+// Purpose:
+// - Provides full CRUD functionality for customer reservation records
+// - Allows managers to add, edit, delete, and search customers in one place
+// - Demonstrates core application features such as state management and filtering
+//
+// Key Concepts Used:
+// - useState for managing form data and customer records
+// - useMemo for efficient search filtering
+// - Conditional rendering for edit vs add mode
+// - Dynamic updates without page reload
 
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
