@@ -1,6 +1,22 @@
+// ReservationForm.jsx
+// Handles customer reservation input form.
+//
+// Purpose:
+// - Collects customer information for table reservations
+// - Stores input data using React state
+// - Demonstrates form handling and event management
+//
+// Key Concepts:
+// - useState for managing form data
+// - Controlled components (input values tied to state)
+// - Event handling (onChange, onSubmit)
+// - Basic validation using required fields
+
 import { useState } from "react";
 
 export default function ReservationForm() {
+
+  // Stores all form input values
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -9,18 +25,26 @@ export default function ReservationForm() {
     partySize: "2",
   });
 
+  // Updates form data when user types or selects a value
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
+  // Handles form submission
   function handleSubmit(e) {
     e.preventDefault();
+
+    // Placeholder behavior (would connect to backend/database in production)
     alert("Reservation submitted! Connect this form to your database next.");
+
+    // Logs form data for debugging/testing
     console.log(formData);
   }
 
   return (
     <form className="reservation-form" onSubmit={handleSubmit}>
+
+      {/* FULL NAME INPUT */}
       <div className="form-group">
         <label>Full Name</label>
         <input
@@ -32,6 +56,7 @@ export default function ReservationForm() {
         />
       </div>
 
+      {/* PHONE NUMBER INPUT */}
       <div className="form-group">
         <label>Phone Number</label>
         <input
@@ -43,7 +68,10 @@ export default function ReservationForm() {
         />
       </div>
 
+      {/* DATE AND TIME ROW */}
       <div className="form-row">
+
+        {/* DATE INPUT */}
         <div className="form-group">
           <label>Date</label>
           <input
@@ -55,6 +83,7 @@ export default function ReservationForm() {
           />
         </div>
 
+        {/* TIME INPUT */}
         <div className="form-group">
           <label>Time</label>
           <input
@@ -65,8 +94,10 @@ export default function ReservationForm() {
             required
           />
         </div>
+
       </div>
 
+      {/* PARTY SIZE DROPDOWN */}
       <div className="form-group">
         <label>Party Size</label>
         <select
@@ -82,9 +113,11 @@ export default function ReservationForm() {
         </select>
       </div>
 
+      {/* SUBMIT BUTTON */}
       <button type="submit" className="gold-button">
         Reserve Table
       </button>
+
     </form>
   );
 }
