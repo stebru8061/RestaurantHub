@@ -1,6 +1,22 @@
+// Menu.jsx
+// Displays the restaurant menu organized into categories.
+//
+// Purpose:
+// - Allows customers to view available food items
+// - Organizes menu into sections (Starters, Main Courses, Desserts)
+// - Uses reusable components to maintain consistent design
+//
+// Key Concepts:
+// - Array data structures for menu items
+// - Mapping over arrays to dynamically render components
+// - Component reuse (MenuCard)
+// - Clean UI organization by category
+
 import MenuCard from "../components/MenuCard";
 
 export default function Menu() {
+
+  // Starter menu items
   const starters = [
     {
       name: "Truffle Burrata",
@@ -14,6 +30,7 @@ export default function Menu() {
     },
   ];
 
+  // Main course menu items
   const mains = [
     {
       name: "Filet Mignon",
@@ -27,6 +44,7 @@ export default function Menu() {
     },
   ];
 
+  // Dessert menu items
   const desserts = [
     {
       name: "Vanilla Bean Crème Brûlée",
@@ -43,6 +61,8 @@ export default function Menu() {
   return (
     <section className="page">
       <div className="container">
+
+        {/* PAGE HEADER */}
         <div className="page-header">
           <p className="eyebrow">Our Menu</p>
           <h1>Curated Dining</h1>
@@ -52,8 +72,11 @@ export default function Menu() {
           </p>
         </div>
 
+        {/* STARTERS SECTION */}
         <div className="menu-section">
           <h2>Starters</h2>
+
+          {/* Render each starter using MenuCard component */}
           <div className="menu-grid">
             {starters.map((item, index) => (
               <MenuCard key={index} {...item} />
@@ -61,8 +84,11 @@ export default function Menu() {
           </div>
         </div>
 
+        {/* MAIN COURSES SECTION */}
         <div className="menu-section">
           <h2>Main Courses</h2>
+
+          {/* Render each main dish */}
           <div className="menu-grid">
             {mains.map((item, index) => (
               <MenuCard key={index} {...item} />
@@ -70,14 +96,18 @@ export default function Menu() {
           </div>
         </div>
 
+        {/* DESSERTS SECTION */}
         <div className="menu-section">
           <h2>Desserts</h2>
+
+          {/* Render each dessert item */}
           <div className="menu-grid">
             {desserts.map((item, index) => (
               <MenuCard key={index} {...item} />
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );
